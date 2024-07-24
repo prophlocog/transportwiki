@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wikitrans2022 - Innowacyjne Przeprowadzki</title>
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    
+    <header>
+        <nav>
+            <a href="#home" class="logo">Wikitrans2022</a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Usługi</a></li>
+                <li><a href="#calculator">Kalkulator</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="floating-icons">
+        <div class="floating-icon">
+            <i class="fas fa-phone"></i>
+        </div>
+        <div class="floating-icon">
+            <i class="fas fa-envelope"></i>
+        </div>
+        <div class="floating-icon">
+            <i class="fas fa-map-marker-alt"></i>
+        </div>
+    </div>
+
+    <main>
+        <section id="home" class="section">
+            <div class="container hero-content">
+                <h1>Wikitrans2022</h1>
+                <div class="superlatives">
+                    <div class="superlative">Innowacyjne</div>
+                    <div class="superlative">Niezawodne</div>
+                    <div class="superlative">Bezpieczne</div>
+                    <div class="superlative">Profesjonalne</div>
+                    <div class="superlative">Efektywne</div>
+                </div>
+                <p class="hero-description">Nowoczesne rozwiązania w przeprowadzkach</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn">Zamów teraz</a>
+                    <a href="#calculator" class="btn">Oblicz koszt</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="services" class="section">
+            <div class="container">
+                <h2>Nasze Usługi</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Transport lokalny</h3>
+                        <p>Szybkie i niezawodne usługi transportowe na terenie Włocławka</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Przeprowadzki</h3>
+                        <p>Kompleksowe usługi przeprowadzkowe dla domów i firm</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Transport długodystansowy</h3>
+                        <p>Bezpieczny transport na terenie całego kraju i Europy</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Pakowanie</h3>
+                        <p>Profesjonalne usługi pakowania z użyciem najwyższej jakości materiałów</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Magazynowanie</h3>
+                        <p>Krótko i długoterminowe przechowywanie mienia w bezpiecznych magazynach</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Montaż i demontaż mebli</h3>
+                        <p>Fachowa pomoc przy rozkładaniu i składaniu mebli</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="calculator" class="section">
+            <div class="container">
+                <h2>Kalkulator Przeprowadzki</h2>
+                <div class="calculator-container">
+                    <div class="calculator-inputs">
+                        <label for="distance">Odległość (km): <span id="distanceValue">50</span></label>
+                        <input type="range" id="distance" min="1" max="1000" value="50">
+                        <label for="volume">Objętość (m³): <span id="volumeValue">10</span></label>
+                        <input type="range" id="volume" min="1" max="50" value="10">
+                        <label for="floors">Liczba pięter: <span id="floorsValue">1</span></label>
+                        <input type="range" id="floors" min="1" max="10" value="1">
+                        <button id="calculateBtn" class="btn">Oblicz koszt</button>
+                        <div id="result">Szacowany koszt: 0 PLN</div>
+                    </div>
+                    <div class="calculator-visual">
+                        <div id="truck"></div>
+                        <div id="building"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Skontaktuj się z nami</h2>
+                <form class="contact-form">
+                    <input type="text" placeholder="Imię i nazwisko" required>
+                    <input type="email" placeholder="Adres e-mail" required>
+                    <input type="tel" placeholder="Numer telefonu">
+                    <textarea placeholder="Twoja wiadomość" required></textarea>
+                    <button type="submit" class="btn">Wyślij wiadomość</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Wikitrans2022. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
