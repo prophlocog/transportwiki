@@ -4,123 +4,367 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wikitrans2022 - Innowacyjne Przeprowadzki</title>
-</head>
-<body>
-    <canvas id="particles-canvas"></canvas>
-    
-    <header>
-        <nav>
-            <a href="#home" class="logo">Wikitrans2022</a>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Usługi</a></li>
-                <li><a href="#calculator">Kalkulator</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 
-    <div class="floating-icons">
-        <div class="floating-icon">
-            <i class="fas fa-phone"></i>
-        </div>
-        <div class="floating-icon">
-            <i class="fas fa-envelope"></i>
-        </div>
-        <div class="floating-icon">
-            <i class="fas fa-map-marker-alt"></i>
-        </div>
-    </div>
+        </head>
+        <body>
+            <canvas id="particles-canvas"></canvas>
 
-    <main>
-        <section id="home" class="section">
-            <div class="container hero-content">
-                <h1>Wikitrans2022</h1>
-                <div class="superlatives">
-                    <div class="superlative">Innowacyjne</div>
-                    <div class="superlative">Niezawodne</div>
-                    <div class="superlative">Bezpieczne</div>
-                    <div class="superlative">Profesjonalne</div>
-                    <div class="superlative">Efektywne</div>
+            <header>
+                <nav>
+                    <a href="#home" class="logo">
+                        <img src="file:///C:/Users/EpicPC/Documents/transport/logo.svg" alt="Wikitrans2022 Logo">
+                    </a>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Usługi</a></li>
+                        <li><a href="#calculator">Kalkulator</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </header>
+            
+            <div class="floating-icons">
+                <div class="floating-icon">
+                    <i class="fas fa-phone"></i>
                 </div>
-                <p class="hero-description">Nowoczesne rozwiązania w przeprowadzkach</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn">Zamów teraz</a>
-                    <a href="#calculator" class="btn">Oblicz koszt</a>
+                <div class="floating-icon">
+                    <i class="fas fa-envelope"></i>
                 </div>
-            </div>
-        </section>
-        
-        <section id="services" class="section">
-            <div class="container">
-                <h2>Nasze Usługi</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <h3>Transport lokalny</h3>
-                        <p>Szybkie i niezawodne usługi transportowe na terenie Włocławka</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Przeprowadzki</h3>
-                        <p>Kompleksowe usługi przeprowadzkowe dla domów i firm</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Transport długodystansowy</h3>
-                        <p>Bezpieczny transport na terenie całego kraju i Europy</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Pakowanie</h3>
-                        <p>Profesjonalne usługi pakowania z użyciem najwyższej jakości materiałów</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Magazynowanie</h3>
-                        <p>Krótko i długoterminowe przechowywanie mienia w bezpiecznych magazynach</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Montaż i demontaż mebli</h3>
-                        <p>Fachowa pomoc przy rozkładaniu i składaniu mebli</p>
-                    </div>
+                <div class="floating-icon">
+                    <i class="fas fa-map-marker-alt"></i>
                 </div>
             </div>
-        </section>
-        
-        <section id="calculator" class="section">
-            <div class="container">
-                <h2>Kalkulator Przeprowadzki</h2>
-                <div class="calculator-container">
-                    <div class="calculator-inputs">
-                        <label for="distance">Odległość (km): <span id="distanceValue">50</span></label>
-                        <input type="range" id="distance" min="1" max="1000" value="50">
-                        <label for="volume">Objętość (m³): <span id="volumeValue">10</span></label>
-                        <input type="range" id="volume" min="1" max="50" value="10">
-                        <label for="floors">Liczba pięter: <span id="floorsValue">1</span></label>
-                        <input type="range" id="floors" min="1" max="10" value="1">
-                        <button id="calculateBtn" class="btn">Oblicz koszt</button>
-                        <div id="result">Szacowany koszt: 0 PLN</div>
+            
+            <main>
+                <section id="home" class="section">
+                    <div class="container hero-content">
+                       
+                        <div class="superlatives">
+                            <div class="superlative">Innowacyjne</div>
+                            <div class="superlative">Niezawodne</div>
+                            <div class="superlative">Bezpieczne</div>
+                            <div class="superlative">Profesjonalne</div>
+                            <div class="superlative">Efektywne</div>
+                        </div>
+                        <p class="hero-description">Nowoczesne rozwiązania w przeprowadzkach</p>
+                        <div class="cta-buttons">
+                            <a href="#contact" class="btn">Zamów teraz</a>
+                            <a href="#calculator" class="btn">Oblicz koszt</a>
+                        </div>
+                        <div class="svg-container">
+                            <img src="file:///C:/Users/EpicPC/Documents/transport/wikitrans.svg" alt="Animated SVG" width="800" height="800">
+                          </div>
                     </div>
-                    <div class="calculator-visual">
-                        <div id="truck"></div>
-                        <div id="building"></div>
+                </section>
+                
+                <section id="services" class="section">
+                    <div class="container">
+                        <h2>Nasze Usługi</h2>
+                        <div class="services-grid">
+                            <div class="service-card">
+                                <h3>Transport lokalny</h3>
+                                <p>Szybkie i niezawodne usługi transportowe na terenie Włocławka</p>
+                            </div>
+                            <div class="service-card">
+                                <h3>Przeprowadzki</h3>
+                                <p>Kompleksowe usługi przeprowadzkowe dla domów i firm</p>
+                            </div>
+                            <div class="service-card">
+                                <h3>Transport długodystansowy</h3>
+                                <p>Bezpieczny transport na terenie całego kraju i Europy</p>
+                            </div>
+                            <div class="service-card">
+                                <h3>Pakowanie</h3>
+                                <p>Profesjonalne usługi pakowania z użyciem najwyższej jakości materiałów</p>
+                            </div>
+                            <div class="service-card">
+                                <h3>Magazynowanie</h3>
+                                <p>Krótko i długoterminowe przechowywanie mienia w bezpiecznych magazynach</p>
+                            </div>
+                            <div class="service-card">
+                                <h3>Montaż i demontaż mebli</h3>
+                                <p>Fachowa pomoc przy rozkładaniu i składaniu mebli</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="contact" class="section">
-            <div class="container">
-                <h2>Skontaktuj się z nami</h2>
-                <form class="contact-form">
-                    <input type="text" placeholder="Imię i nazwisko" required>
-                    <input type="email" placeholder="Adres e-mail" required>
-                    <input type="tel" placeholder="Numer telefonu">
-                    <textarea placeholder="Twoja wiadomość" required></textarea>
-                    <button type="submit" class="btn">Wyślij wiadomość</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Wikitrans2022. Wszelkie prawa zastrzeżone.</p>
-    </footer>
-</body>
-</html>
+                </section>
+                
+                <section id="calculator" class="section">
+                    <div class="container">
+                        <h2>Kalkulator Przeprowadzki</h2>
+                        <div class="calculator-container">
+                            <div class="calculator-inputs">
+                                <label for="distance">Odległość (km): <span id="distanceValue">50</span></label>
+                                <input type="range" id="distance" min="1" max="1000" value="50">
+                                <label for="volume">Objętość (m³): <span id="volumeValue">10</span></label>
+                                <input type="range" id="volume" min="1" max="50" value="10">
+                                <label for="floors">Liczba pięter: <span id="floorsValue">1</span></label>
+                                <input type="range" id="floors" min="1" max="10" value="1">
+                                <button id="calculateBtn" class="btn">Oblicz koszt</button>
+                                <div id="result">Szacowany koszt: 0 PLN</div>
+                            </div>
+                            <div class="calculator-visual">
+                                <div id="truck">
+                                    <div id="truck-body"></div>
+                                    <div id="truck-cabin"></div>
+                                    <div id="truck-wheel1"></div>
+                                    <div id="truck-wheel2"></div>
+                                </div>
+                                <div id="building"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="contact" class="section">
+                    <div class="container">
+                        <h2>Skontaktuj się z nami</h2>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" required placeholder=" ">
+                                <label for="name">Imię i nazwisko</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" required placeholder=" ">
+                                <label for="email">Adres e-mail</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" placeholder=" ">
+                                <label for="phone">Numer telefonu</label>
+                            </div>
+                            <div class="form-group">
+                                <select id="service" required>
+                                    <option value="" disabled selected>Wybierz usługę</option>
+                                    <option value="local">Transport lokalny</option>
+                                    <option value="moving">Przeprowadzki</option>
+                                    <option value="longDistance">Transport długodystansowy</option>
+                                    <option value="packing">Pakowanie</option>
+                                    <option value="storage">Magazynowanie</option>
+                                    <option value="furniture">Montaż i demontaż mebli</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" required placeholder=" "></textarea>
+                                <label for="message">Twoja wiadomość</label>
+                            </div>
+                            <button type="submit" class="btn">Wyślij wiadomość</button>
+                        </form>
+                    </div>
+                </section>
+            </main>
+            
+            <footer>
+                <p>&copy; 2024 Wikitrans2022. Wszelkie prawa zastrzeżone.</p>
+            </footer>
+            
+            <!DOCTYPE html>
+            <html lang="pl">
+            <head>
+                <!-- Head content remains the same -->
+            </head>
+            <body>
+                <!-- Body content remains the same -->
+                
+                <script>
+                    window.onerror = function(message, source, lineno, colno, error) {
+                        console.error("Złapany błąd:", message, "w linii:", lineno);
+                        return true;
+                    };
+            
+                    document.addEventListener('DOMContentLoaded', function() {
+                        // Three.js background
+                        const scene = new THREE.Scene();
+                        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('particles-canvas'), alpha: true });
+                        renderer.setSize(window.innerWidth, window.innerHeight);
+                    
+                        const particles = new THREE.BufferGeometry();
+                        const particleCount = 5000;
+                    
+                        const posArray = new Float32Array(particleCount * 3);
+                    
+                        for(let i = 0; i < particleCount * 3; i++) {
+                            posArray[i] = (Math.random() - 0.5) * 5;
+                        }
+                    
+                        particles.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+                    
+                        const material = new THREE.PointsMaterial({
+                            size: 0.005,
+                            color: 0x8A2BE2
+                        });
+                    
+                        const particlesMesh = new THREE.Points(particles, material);
+                        scene.add(particlesMesh);
+                    
+                        camera.position.z = 2;
+                    
+                        function animate() {
+                            requestAnimationFrame(animate);
+                            particlesMesh.rotation.y += 0.001;
+                            renderer.render(scene, camera);
+                        }
+                    
+                        animate();
+                    
+                        // Smooth scrolling
+                        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                            anchor.addEventListener('click', function (e) {
+                                e.preventDefault();
+                                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                                    behavior: 'smooth'
+                                });
+                            });
+                        });
+                    
+                        // Superlatives animation
+                        const superlatives = document.querySelectorAll('.superlative');
+                        let currentSuperlative = 0;
+                        
+                        function animateSuperlatives() {
+                            superlatives[currentSuperlative].style.opacity = 0;
+                            superlatives[currentSuperlative].style.transform = 'translateY(-50px)';
+                            setTimeout(() => {
+                                superlatives[currentSuperlative].style.transform = 'translateY(50px)';
+                                currentSuperlative = (currentSuperlative + 1) % superlatives.length;
+                                superlatives[currentSuperlative].style.opacity = 1;
+                                superlatives[currentSuperlative].style.transform = 'translateY(0)';
+                            }, 500);
+                        }
+                        
+                        setInterval(animateSuperlatives, 3000);
+                        animateSuperlatives(); // Start the animation immediately
+                        
+                        // Calculator functionality
+                        const distanceInput = document.getElementById('distance');
+                        const volumeInput = document.getElementById('volume');
+                        const floorsInput = document.getElementById('floors');
+                        const calculateBtn = document.getElementById('calculateBtn');
+                        const resultContainer = document.getElementById('result');
+                        const truck = document.getElementById('truck');
+                        const building = document.getElementById('building');
+                        
+                        function updateCalculator() {
+                            const distance = parseInt(distanceInput.value);
+                            const volume = parseInt(volumeInput.value);
+                            const floors = parseInt(floorsInput.value);
+                    
+                            document.getElementById('distanceValue').textContent = distance;
+                            document.getElementById('volumeValue').textContent = volume;
+                            document.getElementById('floorsValue').textContent = floors;
+                    
+                            updateTruck(distance);
+                            updateBuilding(floors);
+                        }
+                    
+                        function updateTruck(distance) {
+                            const maxDistance = parseInt(distanceInput.max);
+                            const position = (distance / maxDistance) * 180; // 80% of the container width
+                            truck.style.transform = `translateX(${position}%)`;
+                        }
+                        
+                        function updateBuilding(floors) {
+                            const currentFloors = building.children.length;
+                            
+                            if (floors > currentFloors) {
+                                for (let i = currentFloors; i < floors; i++) {
+                                    const floor = document.createElement('div');
+                                    floor.classList.add('floor');
+                                    building.appendChild(floor);
+                                }
+                            } else if (floors < currentFloors) {
+                                for (let i = currentFloors - 1; i >= floors; i--) {
+                                    building.removeChild(building.children[i]);
+                                }
+                            }
+                        }
+                        
+                        function calculateCost() {
+                            const distance = parseInt(distanceInput.value);
+                            const volume = parseInt(volumeInput.value);
+                            const floors = parseInt(floorsInput.value);
+                            
+                            // Przykładowe obliczenie kosztu
+                            const baseCost = 100;
+                            const distanceCost = distance * 2;
+                            const volumeCost = volume * 10;
+                            const floorCost = floors * 50;
+                            
+                            const totalCost = baseCost + distanceCost + volumeCost + floorCost;
+                            
+                            resultContainer.textContent = `Szacowany koszt: ${totalCost} PLN`;
+                        }
+                    
+                        distanceInput.addEventListener('input', updateCalculator);
+                        volumeInput.addEventListener('input', updateCalculator);
+                        floorsInput.addEventListener('input', updateCalculator);
+                        
+                        calculateBtn.addEventListener('click', calculateCost);
+                        
+                        // Initialize visual elements with zero values
+                        distanceInput.value = 0;
+                        volumeInput.value = 0;
+                        floorsInput.value = 0;
+                        updateCalculator();
+                        
+                        // Floating icons functionality
+                        const floatingIcons = document.querySelectorAll('.floating-icon');
+                        floatingIcons.forEach(icon => {
+                            icon.addEventListener('mouseover', () => {
+                                icon.style.transform = 'scale(1.2)';
+                            });
+                            icon.addEventListener('mouseout', () => {
+                                icon.style.transform = 'scale(1)';
+                            });
+                        });
+                        
+                        // Contact form submission
+                        const contactForm = document.querySelector('.contact-form');
+                        contactForm.addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            // Here you would typically send the form data to a server
+                            alert('Dziękujemy za wiadomość! Skontaktujemy się wkrótce.');
+                            contactForm.reset();
+                        });
+                        
+                        // Responsive design
+                        window.addEventListener('resize', () => {
+                            renderer.setSize(window.innerWidth, window.innerHeight);
+                            camera.aspect = window.innerWidth / window.innerHeight;
+                            camera.updateProjectionMatrix();
+                        });
+                        
+                        // Interactive background for hero section
+                        const hero = document.querySelector('#home');
+                        hero.addEventListener('mousemove', (e) => {
+                            const { clientX, clientY } = e;
+                            const x = (clientX / window.innerWidth - 0.5) * 20;
+                            const y = (clientY / window.innerHeight - 0.5) * 20;
+                            hero.style.backgroundPosition = `${x}px ${y}px`;
+                        });
+            
+                        // Animated SVG
+                        const svgContainer = document.querySelector('.svg-container');
+                        const animatedSvg = document.querySelector('.animated-svg');
+                    
+                        if (svgContainer && animatedSvg) {
+                            svgContainer.addEventListener('mousemove', (e) => {
+                                const { left, top, width, height } = svgContainer.getBoundingClientRect();
+                                const x = (e.clientX - left) / width - 0.5;
+                                const y = (e.clientY - top) / height - 0.5;
+                    
+                                animatedSvg.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
+                            });
+                    
+                            svgContainer.addEventListener('mouseleave', () => {
+                                animatedSvg.style.transform = 'rotateY(0) rotateX(0)';
+                            });
+                        }
+                    });
+                </script>
+            </body>
+            </html>
